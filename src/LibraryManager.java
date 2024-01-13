@@ -66,12 +66,7 @@ public class LibraryManager extends LibraryEmployee implements IBookManager{
         librarians.add(new Librarian(Name,Age,ID));
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
 
-    public List<LibraryMember> getMembers() {
-        return members;
-    }
+
 
 }
