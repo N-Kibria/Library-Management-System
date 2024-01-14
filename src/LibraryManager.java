@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class LibraryManager extends LibraryEmployee implements IBookManager{
+public class LibraryManager extends LibraryEmployee implements IBookManager, IMemberManager{
 
     private final List<Librarian> librarians;
 
@@ -22,6 +22,13 @@ public class LibraryManager extends LibraryEmployee implements IBookManager{
         }
 
     }
+    @Override
+    public void deleteMember(Integer memberId) {
+        LibraryMember m= findMember(memberId);
+        members.remove(m);
+
+    }
+
 
 
 
@@ -49,7 +56,19 @@ public class LibraryManager extends LibraryEmployee implements IBookManager{
 
         }
     }
-
+    @Override
+    public void addMember(String memberId,Integer MemberAge,Integer MemberID,List<Book>BorrowedBooks) {
+        members.add(new LibraryMember(memberId,MemberAge, MemberID, BorrowedBooks));
+    }
+    @Override
+    public LibraryMember findMember(Integer memberId) {
+        for (LibraryMember member : members) {
+            if (member.MemberID.equals(memberId)) {
+                return member;
+            }
+        }
+        return null;
+    }
     @Override
     public Book findAvailableBook(Integer bookId) {
         for (Book book : books) {
@@ -61,12 +80,9 @@ public class LibraryManager extends LibraryEmployee implements IBookManager{
     }
 
 
-
     public void addLibrarian(String Name,Integer Age,Integer ID) {
         librarians.add(new Librarian(Name,Age,ID));
     }
-
-
 
 
 }

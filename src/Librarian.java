@@ -4,9 +4,13 @@ class Librarian extends LibraryEmployee implements IMemberManager {
     private IMemberManager memberManager;
 
 
-    public Librarian(IBookManager bookManager) {
+    public Librarian(IBookManager bookManager,IMemberManager memberManager) {
+
         this.bookManager = bookManager;
+        this.memberManager = memberManager;
     }
+
+
     public Librarian(String Name,Integer age,Integer Id) {
         this.Name=Name;
         this.Age=age;
@@ -102,6 +106,7 @@ class Librarian extends LibraryEmployee implements IMemberManager {
         for (LibraryMember member : members) {
             if (member.MemberID.equals(memberID)) {
                 memberToRemove = member;
+
                 break;
             }
         }
