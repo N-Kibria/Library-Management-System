@@ -6,15 +6,15 @@ public class Main {
         Librarian librarian = new Librarian(manager,manager );
 
 
-        manager.addNewBook("1984", "George Orwell", 1, 3, "Dystopian");
-        manager.addNewBook("To Kill a Mockingbird", "Harper Lee", 2, 2, "Classic");
-        manager.addNewBook("The Hobbit", "J.R.R. Tolkien", 6, 4, "Fantasy");
-        manager.addNewBook("1984", "George Orwell", 7, 3, "Dystopian");
-        manager.addNewBook("Brave New World", "Aldous Huxley", 8, 2, "Dystopian");
-        manager.addNewBook("To Kill a Mockingbird", "Harper Lee", 9, 2, "Classic");
-        manager.addNewBook("The Catcher in the Rye", "J.D. Salinger", 10, 4, "Classic");
-        manager.addNewBook("The Lord of the Rings", "J.R.R. Tolkien", 11, 3, "Fantasy");
-        manager.addNewBook("The Alchemist", "Paulo Coelho", 12, 5, "Philosophical Fiction");
+        manager.addNewBook("1984", "George Orwell",  3, "Dystopian");
+        manager.addNewBook("To Kill a Mockingbird", "Harper Lee", 2,  "Classic");
+        manager.addNewBook("The Hobbit", "J.R.R. Tolkien", 6,  "Fantasy");
+        manager.addNewBook("1984", "George Orwell", 7, "Dystopian");
+        manager.addNewBook("Brave New World", "Aldous Huxley", 8,  "Dystopian");
+        manager.addNewBook("To Kill a Mockingbird", "Harper Lee", 9, "Classic");
+        manager.addNewBook("The Catcher in the Rye", "J.D. Salinger", 10,  "Classic");
+        manager.addNewBook("The Lord of the Rings", "J.R.R. Tolkien", 11, "Fantasy");
+        manager.addNewBook("The Alchemist", "Paulo Coelho", 12,  "Philosophical Fiction");
 
 
         manager.listAvailableBooks();
@@ -24,13 +24,13 @@ public class Main {
         librarian.listAvailableBooks();
 
 
-        manager.addLibrarian("John Abraham", 25, 101);
-        manager.addLibrarian("Emma Watson", 30, 102);
-        manager.addLibrarian("Michael Smith", 40, 103);
-        manager.addLibrarian("Sarah Johnson", 35, 104);
-        manager.addLibrarian("David Wilson", 45, 105);
-        manager.addLibrarian("Linda Brown", 50, 106);
-        manager.addLibrarian("James Williams", 28, 107);
+        manager.addLibrarian("John Abraham", 25 );
+        manager.addLibrarian("Emma Watson", 30);
+        manager.addLibrarian("Michael Smith", 40);
+        manager.addLibrarian("Sarah Johnson", 35);
+        manager.addLibrarian("David Wilson", 45);
+        manager.addLibrarian("Linda Brown", 50);
+        manager.addLibrarian("James Williams", 28);
 
         List<Book> ListForJohn = new ArrayList<>();
         manager.addMember("John Doe", 25,  ListForJohn);

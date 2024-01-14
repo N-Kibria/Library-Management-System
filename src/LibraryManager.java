@@ -12,8 +12,8 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
 
 
     @Override
-    public void addNewBook(String title, String author, Integer bookId,Integer Quantity,String genre) {
-        books.add(new Book(title, author,bookId, Quantity,genre));
+    public void addNewBook(String title, String author, Integer Quantity,String genre) {
+        books.add(new Book(title, author, Quantity,genre));
     }
     @Override
     public void addBookQuantity( Integer bookId,Integer quantity) {
@@ -94,8 +94,8 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
     }
 
 
-    public void addLibrarian(String Name,Integer Age,Integer ID) {
-        librarians.add(new Librarian(Name,Age,ID));
+    public void addLibrarian(String Name,Integer Age) {
+        librarians.add(new Librarian(Name,Age));
     }
 
 

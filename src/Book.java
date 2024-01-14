@@ -4,12 +4,12 @@ public class Book {
     public Integer BookID;
     public Integer Quantity;
     public String Genre;
-    public Book() {}
-    public Book(String Author ,String title,Integer BookID,Integer Quantity,String genre)
+
+    public Book(String Author ,String title,Integer Quantity,String genre)
     {
         this.Author= Author;
         this.Title=title;
-        this.BookID=BookID;
+        this.BookID = IdGenerator.generateId(Book.class);
         this.Quantity = Quantity;
         this.Genre=genre;
 

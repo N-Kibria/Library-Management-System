@@ -12,10 +12,10 @@ class Librarian extends LibraryEmployee implements IMemberManager {
     }
 
 
-    public Librarian(String Name,Integer age,Integer Id) {
+    public Librarian(String Name,Integer age) {
         this.Name=Name;
         this.Age=age;
-        this.ID=Id;
+        this.ID = IdGenerator.generateId(Librarian.class);
 
     }
 
