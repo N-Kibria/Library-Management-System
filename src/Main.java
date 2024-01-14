@@ -20,7 +20,7 @@ public class Main {
         manager.listAvailableBooks();
 
 
-        manager.addBookQuantity(1, 56);
+        manager.addBookQuantity(101, 56);
         librarian.listAvailableBooks();
 
 
@@ -52,20 +52,20 @@ public class Main {
 
 
 
-        librarian.lendBook(101, 1);
+       librarian.lendBook(101, 101);
 
 
 
         librarian.listAvailableBooks();
 
-
-        librarian.returnBook(101, 1);
+        librarian.ListOfBorrowedBooks(101);
+        librarian.returnBook(101, 101);
 
 
         librarian.listAvailableBooks();
 
         librarian.revokeMembership(101);
-        librarian.ListOfBorrowedBooks(105);
+
 
         manager.listofLibraryMembers();
 

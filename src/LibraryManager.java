@@ -13,6 +13,7 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
 
     @Override
     public void addNewBook(String title, String author, Integer Quantity,String genre) {
+
         books.add(new Book(title, author, Quantity,genre));
     }
     @Override
@@ -65,7 +66,7 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
         System.out.println("Available Books:");
         for (Book book : books) {
 
-            System.out.println(book.Title + " by " + book.Author +"Quantity: " +book.Quantity);
+            System.out.println(book.Title + " by " + book.Author +"   Quantity:  " +book.Quantity);
 
         }
     }
@@ -88,8 +89,9 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
             if (book.BookID.equals(bookId) && book.Quantity >0) {
                 return book;
             }
-            else System.out.println("Book is not available");
+
         }
+        System.out.println("Book is not available");
         return null;
     }
 
