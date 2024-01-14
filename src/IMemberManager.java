@@ -4,4 +4,5 @@ public interface IMemberManager {
     void addMember(String memberId, Integer MemberAge, Integer MemberID, List<Book> BorrowedBooks);
     LibraryMember findMember(Integer memberId);
     void deleteMember(Integer memberId);
+    void listofLibraryMembers();
 }
