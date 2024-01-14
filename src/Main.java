@@ -33,19 +33,19 @@ public class Main {
         manager.addLibrarian("James Williams", 28, 107);
 
         List<Book> ListForJohn = new ArrayList<>();
-        manager.addMember("John Doe", 25, 101, ListForJohn);
+        manager.addMember("John Doe", 25,  ListForJohn);
 
         List<Book> ListForAlice = new ArrayList<>();
-        librarian.addMember("Alice Johnson", 30, 102, ListForAlice);
+        librarian.addMember("Alice Johnson", 30,  ListForAlice);
 
         List<Book> ListForBob = new ArrayList<>();
-        manager.addMember("Bob Smith", 45, 103, ListForBob);
+        manager.addMember("Bob Smith", 45,  ListForBob);
 
         List<Book> ListForEmma = new ArrayList<>();
-        librarian.addMember("Emma Brown", 22, 104, ListForEmma);
+        librarian.addMember("Emma Brown", 22,  ListForEmma);
 
         List<Book> ListForDavid = new ArrayList<>();
-        librarian.addMember("David Wilson", 35, 105, ListForDavid);
+        librarian.addMember("David Wilson", 35,  ListForDavid);
 
         librarian.listAvailableBooks();
 

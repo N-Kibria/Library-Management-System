@@ -70,8 +70,8 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
         }
     }
     @Override
-    public void addMember(String memberId,Integer MemberAge,Integer MemberID,List<Book>BorrowedBooks) {
-        members.add(new LibraryMember(memberId,MemberAge, MemberID, BorrowedBooks));
+    public void addMember(String memberId,Integer MemberAge,List<Book>BorrowedBooks) {
+        members.add(new LibraryMember(memberId,MemberAge, BorrowedBooks));
     }
     @Override
     public LibraryMember findMember(Integer memberId) {

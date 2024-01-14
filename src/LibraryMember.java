@@ -8,8 +8,8 @@ public class LibraryMember {
     public List<Book> BorrowedBooks ;
     public Integer borrowedNumber;
 
-    public LibraryMember(String memberName,Integer memberAge, Integer memberID, List<Book> borrowedBooks) {
-        this.MemberID=memberID;
+    public LibraryMember(String memberName,Integer memberAge, List<Book> borrowedBooks) {
+        this.MemberID=IdGenerator.generateId();
         this.MemberAge=memberAge;
         this.MemberName=memberName;
         this.BorrowedBooks=borrowedBooks;

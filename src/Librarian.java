@@ -81,8 +81,8 @@ class Librarian extends LibraryEmployee implements IMemberManager {
     }
 
     @Override
-    public void addMember(String memberId, Integer MemberAge, Integer MemberID, List<Book> BorrowedBooks) {
-        memberManager.addMember(memberId, MemberAge, MemberID, BorrowedBooks);
+    public void addMember(String memberId, Integer MemberAge,  List<Book> BorrowedBooks) {
+        memberManager.addMember(memberId, MemberAge,  BorrowedBooks);
     }
 
     @Override
