@@ -1,9 +1,13 @@
-import java.util.Random;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IdGenerator {
-    public static int generateId() {
-        Random random = new Random();
+    private static final Map<Class<?>, Integer> lastIds = new HashMap<>();
 
-        return 100000 + random.nextInt(900000);
+    public static synchronized int generateId(Class<?> classes) {
+        Integer lastId = lastIds.getOrDefault(classes, 100);
+        lastId++;
+        lastIds.put(classes, lastId);
+        return lastId;
     }
 }
