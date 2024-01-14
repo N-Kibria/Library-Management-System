@@ -21,7 +21,7 @@ public class Main {
 
 
         manager.addBookQuantity(1, 56);
-       librarian.listAvailableBooks();
+        librarian.listAvailableBooks();
 
 
         manager.addLibrarian("John Abraham", 25, 101);

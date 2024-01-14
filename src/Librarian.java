@@ -87,12 +87,6 @@ class Librarian extends LibraryEmployee implements IMemberManager {
         return memberManager.findMember(memberId);
     }
 
-    @Override
-    public void deleteMember(Integer memberId) {
-        LibraryMember m= findMember(memberId);
-        members.remove(m);
-
-    }
 
 
 
@@ -108,16 +102,10 @@ class Librarian extends LibraryEmployee implements IMemberManager {
 
 
     public void revokeMembership(Integer memberID) {
-        LibraryMember memberToRemove = null;
 
 
-        for (LibraryMember member : members) {
-            if (member.MemberID.equals(memberID)) {
-                memberToRemove = member;
 
-                break;
-            }
-        }
+        LibraryMember memberToRemove= findMember(memberID);
 
         if (memberToRemove != null) {
 

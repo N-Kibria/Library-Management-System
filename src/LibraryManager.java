@@ -24,12 +24,21 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
         }
 
     }
-    @Override
-    public void deleteMember(Integer memberId) {
-        LibraryMember m= findMember(memberId);
-        members.remove(m);
+    public void revokeMembership(Integer memberID) {
 
+
+
+        LibraryMember memberToRemove= findMember(memberID);
+
+        if (memberToRemove != null) {
+
+            members.remove(memberToRemove);
+            System.out.println("Membership for Member ID " + memberID + " has been canceled.");
+        } else {
+            System.out.println("Member not found.");
+        }
     }
+
 
 
 
