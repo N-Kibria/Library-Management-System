@@ -9,13 +9,15 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
 
         librarians = new ArrayList<>();
     }
+
+
     @Override
     public void addNewBook(String title, String author, Integer bookId,Integer Quantity,String genre) {
         books.add(new Book(title, author,bookId, Quantity,genre));
     }
     @Override
     public void addBookQuantity( Integer bookId,Integer quantity) {
-        Book book = findAvailableBook(bookId);
+        Book book = findBook(bookId);
         if(book!=null) {
             book.Quantity += quantity;
             System.out.println("number of "+book.Title+" :" + book.Quantity);
@@ -41,6 +43,7 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
 
         }
     }
+    @Override
     public void listofLibraryMembers() {
         System.out.println(" Library Members:");
         for (LibraryMember member : members) {
@@ -48,11 +51,12 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
             System.out.println("Member Name: " + member.MemberName);
         }
     }
+
     public void listAvailableBooks() {
         System.out.println("Available Books:");
         for (Book book : books) {
 
-            System.out.println(book.Title + " by " + book.Author);
+            System.out.println(book.Title + " by " + book.Author +"Quantity: " +book.Quantity);
 
         }
     }
@@ -70,11 +74,12 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
         return null;
     }
     @Override
-    public Book findAvailableBook(Integer bookId) {
+    public Book findBook(Integer bookId) {
         for (Book book : books) {
             if (book.BookID.equals(bookId) && book.Quantity >0) {
                 return book;
             }
+            else System.out.println("Book is not available");
         }
         return null;
     }
