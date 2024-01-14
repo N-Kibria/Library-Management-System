@@ -6,14 +6,17 @@ public class LibraryMember {
     public Integer MemberAge ;
     public Integer MemberID ;
     public List<Book> BorrowedBooks ;
+    public Integer borrowedNumber;
 
     public LibraryMember(String memberName,Integer memberAge, Integer memberID, List<Book> borrowedBooks) {
         this.MemberID=memberID;
         this.MemberAge=memberAge;
         this.MemberName=memberName;
         this.BorrowedBooks=borrowedBooks;
+        borrowedNumber=0;
 
     }
+
 
 
 }

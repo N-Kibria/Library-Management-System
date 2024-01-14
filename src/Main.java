@@ -65,6 +65,7 @@ public class Main {
         librarian.listAvailableBooks();
 
         librarian.revokeMembership(101);
+        librarian.ListOfBorrowedBooks(105);
 
         manager.listofLibraryMembers();
 

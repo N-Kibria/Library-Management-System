@@ -4,6 +4,7 @@ class Librarian extends LibraryEmployee implements IMemberManager {
     private IMemberManager memberManager;
 
 
+
     public Librarian(IBookManager bookManager,IMemberManager memberManager) {
 
         this.bookManager = bookManager;
@@ -20,6 +21,7 @@ class Librarian extends LibraryEmployee implements IMemberManager {
 
 
     public void lendBook(Integer memberID, Integer bookID) {
+
         LibraryMember member = findMember(memberID);
         if (member == null) {
             System.out.println("Member not found.");
@@ -30,8 +32,9 @@ class Librarian extends LibraryEmployee implements IMemberManager {
         if (book == null) {
             System.out.println("Book not found.");
             return;
-        } else if(book.Quantity > 0) {
+        } else if(book.Quantity > 0 && member.borrowedNumber<11) {
             member.BorrowedBooks.add(book);
+            member.borrowedNumber++;
             book.Quantity--;
         } else {
             System.out.println("Book is already lent.");
@@ -56,6 +59,7 @@ class Librarian extends LibraryEmployee implements IMemberManager {
 
         member.BorrowedBooks.remove(book);
         book.Quantity++;
+        member.borrowedNumber--;
         System.out.println(memberId + " has returned " + bookId + ".");
     }
 
@@ -115,4 +119,15 @@ class Librarian extends LibraryEmployee implements IMemberManager {
             System.out.println("Member not found.");
         }
     }
+    public void ListOfBorrowedBooks(Integer ID )
+    {
+        LibraryMember member= findMember(ID);
+        System.out.println("Books borrowed by " + member.MemberID );
+        for (Book book: member.BorrowedBooks) {
+
+            System.out.println("title " + book.Title );
+        }
+        System.out.println("total :" + member.borrowedNumber );
+    }
+
 }
