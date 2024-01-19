@@ -87,6 +87,7 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
     public Book findBook(Integer bookId) {
         for (Book book : books) {
             if (book.BookID.equals(bookId) && book.Quantity >0) {
+                System.out.println(book.Title +"\t" + book.Quantity);
                 return book;
             }
 
@@ -94,6 +95,8 @@ public class LibraryManager extends LibraryEmployee implements IBookManager, IMe
         System.out.println("Book is not available");
         return null;
     }
+
+
 
 
     public void addLibrarian(String Name,Integer Age) {

@@ -1,9 +1,12 @@
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        LibraryManager manager = new LibraryManager();
+        IBookManager bookManager = new LibraryManager();
+        IMemberManager memberManager = new LibraryManager();
+        LibraryManager manager= new LibraryManager();
 
-        Librarian librarian = new Librarian(manager,manager );
+
+        Librarian librarian = new Librarian(bookManager,memberManager );
 
 
         manager.addNewBook("1984", "George Orwell",  3, "Dystopian");
@@ -21,7 +24,9 @@ public class Main {
 
 
         manager.addBookQuantity(101, 56);
-        librarian.listAvailableBooks();
+
+
+
 
 
         manager.addLibrarian("John Abraham", 25 );
@@ -47,22 +52,24 @@ public class Main {
         List<Book> ListForDavid = new ArrayList<>();
         librarian.addMember("David Wilson", 35,  ListForDavid);
 
-        librarian.listAvailableBooks();
 
 
 
 
-       librarian.lendBook(101, 101);
 
+        librarian.lendBook(101, 101);
+
+
+
+
+        librarian.ListOfBorrowedBooks(101);
+
+        librarian.returnBook(101, 101);
 
 
         librarian.listAvailableBooks();
 
         librarian.ListOfBorrowedBooks(101);
-        librarian.returnBook(101, 101);
-
-
-        librarian.listAvailableBooks();
 
         librarian.revokeMembership(101);
 
